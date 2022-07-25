@@ -31,7 +31,7 @@ router.get("/userlist", async (req, res) => {
     async function userlist() {
         const { query, close } = db.createConnection();
         try {
-            let sql = `SELECT name,roles.role ,department.departmentName FROM users
+            let sql = `SELECT userID,name,roles.role ,department.departmentName FROM users
             join roles on
             roles.roleID=users.roleID
             join department on
